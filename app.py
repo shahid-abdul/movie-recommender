@@ -20,7 +20,6 @@ similarity_file_id = '1vY-_IeqQpdKuZz5HECowh3-LPhHiX6Cf'  # similarity.pkl
 # Download files from Google Drive if they don't exist locally
 if not os.path.exists(movie_dict_file):
     download_file_from_google_drive(movie_dict_file_id, movie_dict_file)
-
 if not os.path.exists(similarity_file):
     download_file_from_google_drive(similarity_file_id, similarity_file)
 
