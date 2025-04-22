@@ -1,4 +1,4 @@
-# movie-recommender
+# movie-recommendation
 
 # CICD-ML-PROJECT
 
@@ -10,10 +10,10 @@
 
 ## Building Docker Image
 
-1. docker build -t shahidabdul/movie-recommender-app .
-2. docker run -p 8080:8080 shahidabdul/movie-recommender-app
+1. docker build -t shahidabdul/movie-recommendation-app .
+2. docker run -p 8080:8080 shahidabdul/movie-recommendation-app
 3. docker images
-4. docker push shahidabdul/movie-recommender-app:latest
+4. docker push shahidabdul/movie-recommendation-app:latest
 
 ## Docker Setup In EC2 commands to be Executed
 
@@ -43,6 +43,6 @@ AWS_SECRET_ACCESS_KEY=
 
 AWS_REGION =
 
-AWS_ECR_LOGIN_URI =
+AWS_ECR_LOGIN_URI = 381492194707.dkr.ecr.ap-south-1.amazonaws.com
 
-ECR_REPOSITORY_NAME =
+ECR_REPOSITORY_NAME = movie-recommender
