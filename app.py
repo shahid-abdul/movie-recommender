@@ -1,9 +1,8 @@
 import gdown
 import pickle
 import pandas as pd
-import stremlit as st
+import streamlit as st
 import os
-
 
 # Function to download file from Google Drive
 def download_file_from_google_drive(file_id, output_path):
