@@ -29,7 +29,7 @@ similarity = pickle.load(open(similarity_file, 'rb'))
 movies = pd.DataFrame(movie_dict)
 
 # Normalize column names to lowercase
-movies.columns = movies.columns.str.strip().str.lower()
+movies.columns = movies.columns.map(str).str.strip().str.lower()
 
 # Debug: print column names
 print("Movie columns:", movies.columns)
