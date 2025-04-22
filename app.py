@@ -1,8 +1,9 @@
 import gdown
 import pickle
 import pandas as pd
-import streamlit as st
+import stremlit as st
 import os
+
 
 # Function to download file from Google Drive
 def download_file_from_google_drive(file_id, output_path):
@@ -15,7 +16,7 @@ similarity_file = 'similarity.pkl'
 
 # Replace these with the actual Google Drive file IDs
 movie_dict_file_id = '1Y2CZg_OXZOVaR0YpBCjQvVMvlytwEi9K'  # movie_dict.pkl
-similarity_file_id = '1vY-_IeqQpdKuZz5HECowh3-LPhHiX6Cf'  # similarity.pkl (from earlier)
+similarity_file_id = '1vY-_IeqQpdKuZz5HECowh3-LPhHiX6Cf'  # similarity.pkl
 
 # Download files from Google Drive if they don't exist locally
 if not os.path.exists(movie_dict_file):
@@ -29,6 +30,12 @@ movie_dict = pickle.load(open(movie_dict_file, 'rb'))
 similarity = pickle.load(open(similarity_file, 'rb'))
 movies = pd.DataFrame(movie_dict)
 
+# Normalize column names to lowercase
+movies.columns = movies.columns.str.strip().str.lower()
+
+# Debug: print column names
+print("Movie columns:", movies.columns)
+
 # Movie recommendation function
 def recommend(movie):
     movie_index = movies[movies['title'] == movie].index[0] 
@@ -37,7 +44,7 @@ def recommend(movie):
     
     recommended_movies = []
     for i in movies_list:
-        recommended_movies.append(movies.iloc[i[0]].title)
+        recommended_movies.append(movies.iloc[i[0]]['title'])
     return recommended_movies
 
 # Streamlit UI
