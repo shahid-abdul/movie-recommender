@@ -1,4 +1,4 @@
-# movie-recommendation
+# movie-recommender
 
 # CICD-ML-PROJECT
 
@@ -10,10 +10,10 @@
 
 ## Building Docker Image
 
-1. docker build -t shahidabdul/movie-recommendation-app .
-2. docker run -p 8080:8080 shahidabdul/movie-recommendation-app
+1. docker build -t shahidabdul/movie-recommender-app .
+2. docker run -p 8080:8080 shahidabdul/movie-recommender-app
 3. docker images
-4. docker push shahidabdul/movie-recommendation-app:latest
+4. docker push shahidabdul/movie-recommender-app:latest
 
 ## Docker Setup In EC2 commands to be Executed
 
