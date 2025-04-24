@@ -137,7 +137,7 @@ env.bak/
 venv.bak/
 
 # .pkl files
-*.pkl
+similarity.pkl
 
 
 # Spyder project settings
