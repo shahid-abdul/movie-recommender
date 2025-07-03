@@ -48,3 +48,13 @@ AWS_ECR_LOGIN_URI = 381492194707.dkr.ecr.ap-south-1.amazonaws.com
 ECR_REPOSITORY_NAME = movie-recommender
 
 # Azure Deployment
+
+## End to End Machine Learning Project
+
+## Run from terminal:
+
+docker build -t movierecommenation.azurecr.io/movierecommendationapp:latest .
+
+docker login movierecommenation.azurecr.io
+
+docker push movierecommenation.azurecr.io/movierecommendationapp:latest
