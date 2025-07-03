@@ -41,4 +41,6 @@ jobs:
             --name MovieRecommender \
             --resource-group ${{ secrets.RESOURCE_GROUP }} \
             --docker-custom-image-name ${{ secrets.ACR_NAME }}.azurecr.io/movierecommender:latest \
-            --docker-registry-server-url https://${{ secrets.ACR_NAME }}.azurecr.io
+            --docker-registry-server-url https://${{ secrets.ACR_NAME }}.azurecr.io \
+            --docker-registry-server-user $(az acr credential show -n ${{ secrets.ACR_NAME }} --query username -o tsv) \
+            --docker-registry-server-password $(az acr credential show -n ${{ secrets.ACR_NAME }} --query passwords[0].value -o tsv)
